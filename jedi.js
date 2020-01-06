@@ -89,3 +89,64 @@ try {
   console.log(error);
 }
 
+function rockPaperScissors(num) {
+    const randomNo = Math.floor(Math.random() * 3) + 1;
+    if (num <1 || num >3) {
+        throw new Error('Please pick a number between 1 and 3. PLEASE.')
+    }
+    //1 = rock, 2 = scissors, 3 = paper
+    if (num === 1) {
+        switch (randomNo) {
+            case 1:
+                return `It's a tie!`;
+                break;
+            case 2:
+                return `You Win!`;
+                break;
+            case 3:
+               return `You Lost!`;
+               break;
+            default:
+                throw new Error(`Something went wrong!`)
+                break;
+        }
+    }
+    else if (num === 2) {
+        switch (randomNo) {
+            case 1:
+                return `You Lose!`;
+                break;
+            case 2:
+                return `It's a Tie!`;
+                break;
+            case 3:
+               return `You Win!`;
+               break;
+            default:
+                throw new Error(`Something went wrong!`)
+                break;
+        }
+    }
+    else if (num === 3) {
+        switch (randomNo) {
+            case 1:
+                return `You Win!`;
+                break;
+            case 2:
+                return `You Lose!`;
+                break;
+            case 3:
+               return `It's a Tie!`;
+               break;
+            default:
+                throw new Error(`Something went wrong!`)
+                break;
+        }
+    }
+}
+
+try {
+    console.log(rockPaperScissors(-4));
+} catch(error) {
+    console.log(error)
+}
