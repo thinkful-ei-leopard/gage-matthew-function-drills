@@ -39,3 +39,28 @@ const filteredNames = filter(myNames, function(name) {
 
 console.log(filteredNames) // => ['Rich', 'Ray']
 // <---- DO NOT EDIT BETWEEN THESE LINES
+
+function hazardWarningCreator(typeOfWarning) {
+    let warningCounter = 0;
+
+    return function(location) {
+        warningCounter++;
+        console.log(`DANGER! There is a ${typeOfWarning} hazard at ${location}!`);
+        console.log(`The ${typeOfWarning} hazard alert has triggered ${warningCounter} time(s) today!`);
+    }
+}
+
+const rockWarning = hazardWarningCreator('Rocks on the Road');
+const tornadoWarning = hazardWarningCreator('Tornado in Area');
+const gammaRayBurstWarning = hazardWarningCreator('A Star Burst near us');
+
+rockWarning('Apple St and Zebra Ave');
+rockWarning('Microsoft St and Monichrome Ave');
+
+tornadoWarning('Main St and Central Ave');
+tornadoWarning('Avocado Pl and Pineapple Way');
+tornadoWarning('Cedar St and Dogwood St');
+
+gammaRayBurstWarning('Earth');
+gammaRayBurstWarning('Pluto');
+gammaRayBurstWarning('Saturn');
