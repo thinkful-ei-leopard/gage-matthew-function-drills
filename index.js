@@ -7,7 +7,10 @@ function getYearOfBirth(age) {
 }
 
 function createGreeting(name, age) {
-  const yearOfBirth = getYearOfBirth();
+  if (!name || !age) {
+      throw new Error('Name and Age need to be defined.')
+  }
+  const yearOfBirth = getYearOfBirth(age);
   return `Hi, my name is ${name} and I'm ${age} years old! I was born in ${yearOfBirth}.`;
 }
 
