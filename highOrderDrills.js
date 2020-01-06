@@ -64,3 +64,10 @@ tornadoWarning('Cedar St and Dogwood St');
 gammaRayBurstWarning('Earth');
 gammaRayBurstWarning('Pluto');
 gammaRayBurstWarning('Saturn');
+
+let turtleMovements = [[0, 0], [0, 5], [-1, -3], [-3, 1], [2, -4], [3, 2]];
+
+turtleMovements.filter(function(item) {
+    return item[0] >= 0 && item[1] >= 0;
+}).map(item => item[0]+item[1])
+.forEach((item, i) => console.log(`Movement #${i+1}: ${item} step(s)`))
