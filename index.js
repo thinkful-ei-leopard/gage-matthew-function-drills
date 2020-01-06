@@ -1,6 +1,9 @@
 /* eslint-disable strict */
 function getYearOfBirth(age) {
-    return 2020 - age;
+  if(age < 0) {
+    throw new Error('Age cannot be less than zero.');
+  }
+  return 2020 - age;
 }
 
 function createGreeting(name, age) {
@@ -8,5 +11,9 @@ function createGreeting(name, age) {
   return `Hi, my name is ${name} and I'm ${age} years old! I was born in ${yearOfBirth}.`;
 }
 
-const greeting1 = createGreeting('Gage', 25);
-console.log(greeting1);
+try {
+  const greeting1 = createGreeting('Gage', 25);
+  console.log(greeting1);
+} catch (error) {
+  console.log(`You have an error! ${error.name}: ${error.message}.`);
+}
